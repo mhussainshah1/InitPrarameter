@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--web.xml - central place of storing values that we can accesses place in application-->
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd"
+         version="5.0">
+    <!--
+    Initialization Parameters:
+    1) Context Parameters - Parameters are like Global Variable. They Parameter available to every single servlet with in application    -->
+    <context-param>
+        <param-name>authorizationToken</param-name>
+        <param-value>1234swag</param-value>
+    </context-param>
+
+<!--    2) Servlet Parameter -Parameter available to specific servlet and only accessible to that servlet-->
+    <servlet>
+        <servlet-name>XMLServlet</servlet-name>
+        <servlet-class>com.example.XMLServlet</servlet-class>
+        <init-param>
+            <param-name>copyrightYear</param-name>
+            <param-value>2021</param-value>
+        </init-param>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>XMLServlet</servlet-name>
+        <url-pattern>/hello</url-pattern>
+    </servlet-mapping>
+
+</web-app>
